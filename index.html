@@ -146,13 +146,15 @@ section{padding:64px 0}
 .two{gap:32px}
 nav{padding:16px 20px}
 nav ul,.logo-txt,.hero-btn,.left,.cta-c,.spalla-container,.h1row .par,.right b{display:none}
+.hero{background-position:25% center}
+.h1row{justify-content:flex-start}
 nav .btn:not(.mobile-prova){display:none}
 .mobile-prova{display:inline-block}
 .hero::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(rgba(14,40,80,.32),rgba(14,40,80,.10) 60%,transparent)}
 .hero .in{padding:28px 20px 22vw}
 /* minmax(0,1fr): impedisce alla colonna di allargarsi oltre lo schermo */
 .trio{grid-template-columns:minmax(0,1fr);gap:18px;margin-top:20px}
-.right{grid-column:1;order:1;justify-self:center;text-align:center;max-width:460px;padding:0;font-size:16px}
+.right{grid-column:1;order:1;justify-self:flex-start;text-align:left;max-width:460px;padding:0;font-size:16px}
 .pw{grid-column:1;order:2;justify-self:center;width:100%;max-width:420px;margin-top:24px}
 /* card telefono: grid fluida, niente larghezze fisse */
 .phone{width:100%;min-height:0;padding:18px;border-radius:28px;text-align:left;display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:14px;align-items:center}
@@ -172,7 +174,7 @@ section{padding:56px 0}
 .intro{padding:24px 20px 64px}
 nav .btn{padding:10px 16px;font-size:13px}
 .logo img{height:34px}
-.h1row{flex-direction:column;gap:0}
+.h1row{flex-direction:column;align-items:flex-start;gap:0}
 .h1row h1{font-size:clamp(40px,14vw,80px)}
 .stats,.steps,.price,.quotes,.team{grid-template-columns:1fr}
 .stats div{border-left:0;border-top:1px solid var(--line);padding:26px 16px}
