@@ -22,14 +22,13 @@ a{color:inherit}
 .btn:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
 /* HERO */
 .hero{position:relative;color:#fff;overflow:hidden;background:
+url('img/hero-bg-3.png') center center/cover no-repeat,
 radial-gradient(ellipse 260px 90px at 18% 38%,rgba(255,255,255,.75),transparent 70%),
 radial-gradient(ellipse 340px 110px at 82% 30%,rgba(255,255,255,.7),transparent 70%),
 radial-gradient(ellipse 300px 100px at 70% 62%,rgba(255,255,255,.55),transparent 70%),
 radial-gradient(ellipse 280px 90px at 28% 68%,rgba(255,255,255,.5),transparent 70%),
 linear-gradient(#3f86d0,#8fc0ea 70%,#cfe3f2)}
-.col{position:absolute;top:0;bottom:0;width:clamp(60px,9vw,130px);background:linear-gradient(90deg,#d9c9a8,#f3e8cf 45%,#cdbb96);box-shadow:0 0 40px rgba(0,0,0,.2)}
-.col.l{left:0}.col.r{right:0}
-.col::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 18%,#6f8a52 0 28px,transparent 30px),radial-gradient(circle at 30% 34%,#8aa56a 0 22px,transparent 24px),radial-gradient(circle at 60% 52%,#f4d9dc 0 12px,transparent 14px),radial-gradient(circle at 35% 66%,#6f8a52 0 26px,transparent 28px)}
+
 nav{position:relative;z-index:3;display:flex;align-items:center;justify-content:space-between;padding:24px clamp(80px,11vw,160px);border-bottom:1px solid rgba(255,255,255,.35);margin:0 0 0}
 .logo{font-family:"Cormorant Garamond",serif;font-size:30px;text-decoration:none;display:flex;gap:8px;align-items:center}
 .logo i{width:22px;height:22px;border:2px solid #fff;border-radius:50% 50% 4px 4px;display:inline-block}
@@ -167,7 +166,6 @@ nav .btn{padding:10px 16px;font-size:13px}
 
 <!-- HERO -->
 <header class="hero">
-<div class="col l"></div><div class="col r"></div>
 <nav>
 <a class="logo" href="#"><i></i>Calliope</a>
 <ul><li><a href="#come">Come funziona</a></li><li><a href="#per-chi">Per chi è</a></li><li><a href="#prezzi">Prezzi</a></li><li><a href="#faq">Domande</a></li></ul>
