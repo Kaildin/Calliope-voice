@@ -13,6 +13,8 @@ box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:en
 :root[data-theme="dark"]{--ink:#f4efe3;--cream:#14171c;--card:#1d2128;--muted:#aaa699;--line:rgba(244,239,227,.15);--bg2:#191d24}
 html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box}
+html,body{max-width:100%;overflow-x:clip}
+img{max-width:100%}
 body{margin:0;background:var(--cream);color:var(--ink);font:17px/1.6 "IBM Plex Sans",system-ui,sans-serif}
 h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;line-height:1.02;margin:0}
 a{color:inherit}
@@ -46,7 +48,7 @@ nav ul a{text-decoration:none;font-size:12.5px;letter-spacing:.14em;text-transfo
 .right b{display:block;margin-top:10px;font-weight:600;font-size:14px}
 .pw{position:relative;grid-column:3;justify-self:end;order:2;margin-top:-100px}
 /* telefono */
-.phone{position:relative;margin:0 auto;width:260px;min-height:380px;border-radius:34px;background:rgba(255,255,255,.2);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.55);padding:22px;box-shadow:0 30px 60px rgba(20,50,100,.3);text-align:center}
+.phone{position:relative;margin:0 auto;width:260px;min-height:380px;border-radius:34px;background:rgba(255,255,255,.2);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.55);padding:22px;box-shadow:0 30px 60px rgba(20,50,100,.3);text-align:center}
 .av{width:68px;height:68px;border-radius:50%;margin:6px auto 10px;background:radial-gradient(circle at 35% 30%,#fff,#e9dcc3 60%,#bfa56d);display:grid;place-items:center;font:600 28px "Cormorant Garamond",serif;color:#6b5522}
 .phone small{display:block;opacity:.9;font-size:12px}
 .msg{background:#fff;color:#1d1b1a;border-radius:16px;padding:10px 12px;font-size:13px;text-align:left;margin-top:10px;line-height:1.4}
@@ -138,31 +140,54 @@ footer.f{padding:44px 0;color:var(--muted);font-size:14px}
 footer.f .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px}
 footer.f a{margin-right:18px}
 .hero-btn{display:none}
+.mobile-prova{display:none}
 @media(max-width:900px){
-.trio{grid-template-columns:1fr;gap:18px}
-.left,.right{text-align:center;padding:0 12px;justify-self:center;max-width:460px}
-.left h2{max-width:none}
-.pw{order:2}.right{order:3}
-.hero .in{padding:24px 48px 19.5vw}
-.cta-c{position:static;margin:16px auto 0}
-.col{width:36px}
-nav{padding:18px 54px}nav ul{display:none}
-.hero{padding-bottom:0}
+section{padding:64px 0}
+.two{gap:32px}
+nav{padding:16px 20px}
+nav ul,.logo-txt,.hero-btn,.left,.cta-c,.spalla-container,.h1row .par,.right b{display:none}
+nav .btn:not(.mobile-prova){display:none}
+.mobile-prova{display:inline-block}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(rgba(14,40,80,.32),rgba(14,40,80,.10) 60%,transparent)}
+.hero .in{padding:28px 20px 22vw}
+/* minmax(0,1fr): impedisce alla colonna di allargarsi oltre lo schermo */
+.trio{grid-template-columns:minmax(0,1fr);gap:18px;margin-top:20px}
+.right{grid-column:1;order:1;justify-self:center;text-align:center;max-width:460px;padding:0;font-size:16px}
+.pw{grid-column:1;order:2;justify-self:center;width:100%;max-width:420px;margin-top:24px}
+/* card telefono: grid fluida, niente larghezze fisse */
+.phone{width:100%;min-height:0;padding:18px;border-radius:28px;text-align:left;display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:14px;align-items:center}
+.phone .av{grid-row:1/3;margin:0;width:56px;height:56px;font-size:24px}
+.phone b{align-self:end;font-size:17px;line-height:1.2}
+.phone small{align-self:start;margin-top:2px}
+.phone .msg,.phone .wave{grid-column:1/-1}
+.phone .msg.me{margin:16px 0 0 28px}
+.phone .msg:not(.me){margin:10px 28px 0 0}
 .stats,.steps,.price,.quotes,.team{grid-template-columns:1fr 1fr}
 .two,.empathy,.fit{grid-template-columns:1fr}
 .stats div:nth-child(3){border-left:0}
-.logo-txt{display:none}
-nav .btn{display:none}
-.hero-btn{display:inline-block;margin-bottom:20px}
 }
 @media(max-width:600px){
-.stats,.steps,.price,.quotes,.team{grid-template-columns:1fr}
-.stats div{border-left:0;border-top:1px solid var(--line)}
-.case{grid-template-columns:1fr}
+.wrap{padding:0 20px}
+section{padding:56px 0}
+.intro{padding:24px 20px 64px}
 nav .btn{padding:10px 16px;font-size:13px}
+.logo img{height:34px}
 .h1row{flex-direction:column;gap:0}
-.par{font-size:70px}
-.h1row h1{font-size:clamp(40px,12.5vw,80px)}
+.h1row h1{font-size:clamp(40px,14vw,80px)}
+.stats,.steps,.price,.quotes,.team{grid-template-columns:1fr}
+.stats div{border-left:0;border-top:1px solid var(--line);padding:26px 16px}
+.stats div:first-child{border-top:0}
+.hd{margin-bottom:32px}
+.fit>div,.plan,blockquote,.step,.pp,.case{padding:24px}
+.case{grid-template-columns:1fr;gap:12px}
+.fit h3{font-size:30px}
+.plan .p{font-size:46px}
+summary{font-size:22px}
+.empathy{border-radius:22px}
+.btnrow .btn{width:100%;text-align:center}
+.final{padding:80px 20px}
+.final p{font-size:17px}
+footer.f .wrap{flex-direction:column}
 }
 @media(prefers-reduced-motion:reduce){.wave i{animation:none;height:20px}html{scroll-behavior:auto}}
 </style>
@@ -175,6 +200,7 @@ nav .btn{padding:10px 16px;font-size:13px}
 <a class="logo" href="#"><img src="img/logo-white.png" alt=""><span class="logo-txt">Calliope</span></a>
 <ul><li><a href="#come">Come funziona</a></li><li><a href="#per-chi">Per chi è</a></li><li><a href="#prezzi">Prezzi</a></li><li><a href="#faq">Domande</a></li></ul>
 <a class="btn" href="#prova" style="background:#1d1b1a">Parla con Calliope</a>
+<a class="btn mobile-prova" href="#prova">PROVA GRATIS</a>
 </nav>
 <div class="in">
 <a class="btn hero-btn" href="#prova" style="background:#1d1b1a">Parla con Calliope</a>
