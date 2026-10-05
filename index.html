@@ -137,6 +137,7 @@ details p{color:var(--muted);margin:12px 0 0;max-width:680px}
 footer.f{padding:44px 0;color:var(--muted);font-size:14px}
 footer.f .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px}
 footer.f a{margin-right:18px}
+.hero-btn{display:none}
 @media(max-width:900px){
 .trio{grid-template-columns:1fr;gap:18px}
 .left,.right{text-align:center;padding:0 12px;justify-self:center;max-width:460px}
@@ -150,6 +151,9 @@ nav{padding:18px 54px}nav ul{display:none}
 .stats,.steps,.price,.quotes,.team{grid-template-columns:1fr 1fr}
 .two,.empathy,.fit{grid-template-columns:1fr}
 .stats div:nth-child(3){border-left:0}
+.logo-txt{display:none}
+nav .btn{display:none}
+.hero-btn{display:inline-block;margin-bottom:20px}
 }
 @media(max-width:600px){
 .stats,.steps,.price,.quotes,.team{grid-template-columns:1fr}
@@ -168,11 +172,12 @@ nav .btn{padding:10px 16px;font-size:13px}
 <!-- HERO -->
 <header class="hero">
 <nav>
-<a class="logo" href="#"><img src="img/logo-white.png" alt="">Calliope</a>
+<a class="logo" href="#"><img src="img/logo-white.png" alt=""><span class="logo-txt">Calliope</span></a>
 <ul><li><a href="#come">Come funziona</a></li><li><a href="#per-chi">Per chi è</a></li><li><a href="#prezzi">Prezzi</a></li><li><a href="#faq">Domande</a></li></ul>
 <a class="btn" href="#prova" style="background:#1d1b1a">Parla con Calliope</a>
 </nav>
 <div class="in">
+<a class="btn hero-btn" href="#prova" style="background:#1d1b1a">Parla con Calliope</a>
 <div class="h1row"><h1>Chiamata</h1><div class="par">(<span>Mai più. Risponde h24, allenata sulla tua azienda.</span>)</div><h1>Persa?</h1></div>
 <div class="trio">
 <div class="left"><h2>Un dipendente in più, che non dorme mai</h2></div>
